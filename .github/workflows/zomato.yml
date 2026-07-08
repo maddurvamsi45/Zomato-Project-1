@@ -39,7 +39,7 @@ concurrency:
   
 env:
   NODE_VERSION: "22"
-  IMAGE_NAME: maddurvamsi45/zomato
+  IMAGE_NAME: madduruvamsi45/zomato
   IMAGE_TAG: ${{ github.sha }}
 
  
@@ -282,7 +282,7 @@ jobs:
         docker images
 
         docker image inspect \
-        ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
+         ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
 
   
 # Validate Image Size
@@ -301,7 +301,7 @@ jobs:
 #  Push Image
     - name: Push Docker Image
       run: |
-        docker push $IMAGE_NAME:$IMAGE_TAG
+        docker push $IMAGE_NAME:${{ github.sha }}
 
 # Verify Container Starts
   
