@@ -39,7 +39,7 @@ concurrency:
   
 env:
   NODE_VERSION: "22"
-  IMAGE_NAME: zomato
+  IMAGE_NAME: ${{ secrets.DOCKER_USER }}/zomato
   IMAGE_TAG: ${{ github.sha }}
 
  
@@ -181,7 +181,7 @@ jobs:
     - name: Run Gitleaks
       uses: gitleaks/gitleaks-action@v2
       env:
-        GITHUB_TOKEN: ${{ secrets.GT }}
+        GITHUB_TOKEN: ${{ secrets.VAMSI }}
 
 #Install Trivy
 
