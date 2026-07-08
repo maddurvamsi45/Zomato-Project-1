@@ -301,8 +301,7 @@ jobs:
 #  Push Image
     - name: Push Docker Image
       run: |
-        IMAGE_NAME: maddurvamsi45/zomato
-        IMAGE_TAG: ${{ github.sha }}
+        docker push $IMAGE_NAME:$IMAGE_TAG
 
 # Verify Container Starts
   
